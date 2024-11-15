@@ -17,20 +17,21 @@ const Register = () => {
         const photo = form.get('photo');
         const email = form.get('email');
         const password = form.get('password');
-        console.log({ name, photo, email, password });
+        // console.log({ name, photo, email, password });
         createNewUser(email, password)
             .then(result => {
                 const user = result.user;
                 setUser(user);
                 updateUserProfile({displayName: name, photoURL:photo}).then(()=>{
                     navigate('/')
-                }).catch(err => console.log(err))
+                }).catch(err => setError(err))
                 // console.log(user)
             })
             .catch((error) => {
-                const errorCode = error.code;
                 const errorMessage = error.message;
-                console.log({ errorCode, errorMessage })
+                setError(errorMessage)
+
+                // console.log({ errorCode, errorMessage })
             });
     }
     return (
