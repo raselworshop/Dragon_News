@@ -37,7 +37,7 @@ const NewsCard = (props = {}) => {
             {/* Image */}
             <div className="px-6 py-2">
                 <img
-                    className="w-full h-60 object-cover rounded-md"
+                    className="w-full  h-72 object-cover rounded-md"
                     src={news.thumbnail_url}
                     alt="Thumbnail"
                 />
