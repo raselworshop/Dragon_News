@@ -3,6 +3,7 @@
 import { AiFillStar, AiOutlineShareAlt } from 'react-icons/ai';
 import { BsEye } from 'react-icons/bs';
 import { IoBookmarkOutline } from 'react-icons/io5';
+import { Link } from 'react-router-dom';
 
 const NewsCard = (props = {}) => {
     const { news } = props || {};
@@ -46,7 +47,7 @@ const NewsCard = (props = {}) => {
             {/* Details */}
             <div className="p-6  text-gray-700 text-sm">
                 <p>
-                    {news.details.substring(0, 120)}... <span className="text-orange-600 font-medium">Read More</span>
+                    {news.details.substring(0, 120)}... <Link to={`/news/${news._id}`} className="text-orange-600 font-medium">Read More</Link>
                 </p>
             </div>
 
